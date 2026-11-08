@@ -1,0 +1,29 @@
+-- For wasm32-wasi-cabal (shell.nix), with the libraries from their
+-- checkouts, and monad-logger as build.sh patches it.
+packages:
+  .
+  ..
+  ../../hs-tox
+  ../../hs-toxav
+  ../../hs-toxcore
+  ../../hs-toxsync
+  ../../third_party/hatter
+  ../../third_party/hatter/browser
+  dist-newstyle/monad-logger-0.3.42
+
+package toxcore
+  flags: +library-only
+
+package monad-logger
+  flags: -template_haskell
+
+-- The compiler's own, which the others can't be built in place of.
+constraints:
+  bytestring installed,
+  containers installed,
+  directory installed,
+  filepath installed,
+  process installed,
+  text installed,
+  time installed,
+  unix installed

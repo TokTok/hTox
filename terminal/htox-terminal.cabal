@@ -1,0 +1,23 @@
+cabal-version: 3.0
+name:          htox-terminal
+synopsis:      hTox in a terminal
+version:       0.1.0
+license:       GPL-3.0-only
+build-type:    Simple
+author:        iphy
+maintainer:    iphy
+copyright:     Copyright (c) 2026 The TokTok Team
+homepage:      https://toktok.ltd
+category:      Network
+
+executable htox
+  default-language: Haskell2010
+  main-is:          Main.hs
+  ghc-options:      -Wall -threaded
+  build-depends:
+      base             <5
+    , containers
+    , hatter
+    , hatter-terminal
+    , text
+    , htox
